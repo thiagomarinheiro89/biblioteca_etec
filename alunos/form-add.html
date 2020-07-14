@@ -1,0 +1,22 @@
+<form id='add_aluno' enctype="multipart/form-data" method='post' action="controler/adiciona_aluno.php">
+    Nome do Aluno:
+    <input type='text' class='form-control nome' name='nome'>
+    Data de Nascimento:
+    <input type='date' class='form-control nasc' name='nasc'>
+    Email:
+    <input type='email' class='form-control email' name='email'>
+    Telefone:
+    <input type='text' class='form-control telefone' name='telefone'>
+    Foto: <input type='file' name = 'foto'>
+</form>
+
+<script>
+function cadastra_aluno(){
+  if($(".nome").val() == "" || $(".nasc").val() == "" || $(".email").val() == "" || $(".telefone").val() == ""){
+    alert("Preencha todos os dados do aluno!")
+  } else {
+    $("#add_aluno").submit();
+  }
+
+}
+</script>
