@@ -33,5 +33,6 @@ function perfil(mat){
 }
 
 function adicionar(){
+    $(".modal-body").load("alunos/form-add.html");
     $("#adiciona_aluno").modal("show");
 }

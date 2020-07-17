@@ -33,6 +33,7 @@ $dados_aluno = mysqli_fetch_assoc($bd);
     <tr>
       <td>Data de nascimento:
           <input type='date' name='data_nasc' id = 'data_nasc' class='form-control' value='<?php echo $dados_aluno['data_nasc']; ?>'>
+          <input type='hidden' name='matricula' value='<?php echo $_GET['mat']; ?>'>
       </form>
     </tr>
     <tr>
@@ -44,6 +45,15 @@ $dados_aluno = mysqli_fetch_assoc($bd);
 
 <script>
 function gravar(){
-  alert($("#dados_aluno").serialize());
+  if($("#nome").val()=='' || $("#email").val()==""){
+    alert("Por favor digite o nome e o e-mail do aluno");
+  } else {
+    $.post("controler/update_aluno.php", $("#dados_aluno").serialize(), function(data){
+        alert(data);
+        $(".conteudo").load("alunos/perfil.php?mat=<?php echo $_GET['mat']; ?>");
+    });
+  }
+
+
 }
 </script>
