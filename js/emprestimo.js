@@ -2,10 +2,14 @@ function busca_nome_livro(){
   cod = $("#cod_obra").val();
   $.get("controler/nome_livro.php?id="+cod, function(data){
     var retorno = JSON.parse(data);
-    if(retorno['erro']==false && retorno['nome']!=null){
-      $("#nome_obra").val(retorno['nome']);
-      $("#matricula").attr("disabled", false);
-
+    if(retorno['erro']==false && retorno['obra']!=null){
+      if(retorno['obra']['situacao']==0){
+          $("#nome_obra").val(retorno['obra']['nome']);
+          $("#matricula").attr("disabled", false);
+        } else {
+          alert("Obra não está disponível!");
+          $("#cod_obra").focus();
+        }
     } else {
       alert("Obra não encontrada!");
       $("#cod_obra").focus();
@@ -23,8 +27,8 @@ function busca_nome_aluno(){
       $("#data_dev").attr("disabled", false);
       $("#botao").attr("disabled", false);
     } else {
-      alert("Obra não encontrada!");
-      $("#cod_obra").focus();
+      alert("Aluno não encontrado!");
+      $("#matricula").focus();
     }
   })
 }

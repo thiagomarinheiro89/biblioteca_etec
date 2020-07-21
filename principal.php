@@ -48,7 +48,9 @@ if(!isset($_SESSION['id_usuario'])){
   <?php
   if(isset($_REQUEST['modulo'])){
     include($_REQUEST['modulo']);
-   } ?>
+  } else {
+    include("dash.php");
+  } ?>
 
 </div>
 <div class='load'>
