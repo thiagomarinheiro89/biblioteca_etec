@@ -5,7 +5,7 @@
     </div>
 
     <div class='col-sm-3'>
-      <button class='btn btn-primary btn-block' onclick="devolucao()"><h1>Devolção</h1></button>
+      <button class='btn btn-primary btn-block' onclick="devolucao()"><h1>Devolução</h1></button>
     </div>
 
   </div>

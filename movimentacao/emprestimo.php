@@ -5,20 +5,20 @@
         <table class='table table-striped'>
           <tr>
             <td width='100px'>Cod. Obra
-                <input type='text' name='cod_obra' class='form-control'>
+                <input type='text' name='cod_obra' id='cod_obra' class='form-control' onchange="busca_nome_livro()" onfocus='$("#matricula").attr("disabled", true)'>
             <td><br>
                 <input type='text' id='nome_obra' class='form-control' disabled>
           </tr>
           <tr>
-            <td width='100px'>Matrícula:
-                <input type='text' name='matricula' class='form-control' disabled>
+            <td>Matrícula:
+                <input type='text' name='matricula' id='matricula' class='form-control' onchange="busca_nome_aluno()" disabled>
             <td><br>
                 <input type='text' id='nome_aluno' class='form-control' disabled>
           </tr>
           <tr>
-            <td width='100px'>Data Devolução:
-                <input type='date' name='data_dev' class='form-control' disabled>
-            <td>
+            <td>Data Devolução:
+                <input type='date' name='data_dev' id='data_dev' class='form-control' disabled>
+            <td><br><button class='btn btn-primary' id='botao' onclick='efetua_emprestimo()' disabled>Finalizar</button>
           </tr>
         </table>
 
@@ -26,3 +26,5 @@
   </div>
 
 </div>
+
+<script src='js/emprestimo.js'></script>
