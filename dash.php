@@ -6,7 +6,7 @@
             <div class="panel-body">
               <h1 style='float:right' id='qtn_obras'>0</h1>
               <br><br><br>
-              <a href='#' class='btn btn-info btn-block'>Ver</a>
+              <a href='#' class='btn btn-info btn-block' onclick="$('.conteudo').load('livros.html')">Ver</a>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <div class="panel-body">
               <h1 style='float:right' id='qtn_alunos'>0</h1>
               <br><br><br>
-              <a href='#' class='btn btn-success btn-block'>Ver</a>
+              <a href='#' class='btn btn-success btn-block' onclick="$('.conteudo').load('alunos/alunos.php')">Ver</a>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
             <div class="panel-body">
               <h1 style='float:right' id='qtn_emprestimos'>0</h1>
               <br><br><br>
-              <a href='#' class='btn btn-danger btn-block'>Ver</a>
+              <a href='#' class='btn btn-danger btn-block' onclick="$('.conteudo').load('relatorios/atrasados.php')">Ver</a>
             </div>
         </div>
     </div>
